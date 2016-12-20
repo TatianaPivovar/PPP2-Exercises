@@ -7,6 +7,14 @@ int main()
     std::string first_name;
     std::cin >> first_name;
 
+    std::cout << "Enter the age of the recipient:" << std::endl;
+    int age = 0;
+    std::cin >> age;
+    if (age <= 0 || age >= 110) {
+        std::cerr << "You're kidding!" << std::endl;
+        exit(1);
+    }
+
     std::cout << "Enter the name of another person:" << std::endl;
     std::string friend_name;
     std::cin >> friend_name;
@@ -29,4 +37,6 @@ int main()
     else
         std::cout << "it ";
     std::cout << "to call me." << std::endl;
+    std::cout << "I hear you just had a birthday and you are "
+        << age << " years old." << std::endl;
 }
