@@ -45,4 +45,8 @@ int main()
         std::cout << "Next year you will be able to vote." << std::endl;
     else if (age > 70)
         std::cout << "I hope you are enjoying retirement." << std::endl;
+
+    std::cout << "Yours sincerely," << std::endl
+        << std::endl << std::endl
+        << "Tatiana" << std::endl;
 }
