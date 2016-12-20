@@ -39,4 +39,10 @@ int main()
     std::cout << "to call me." << std::endl;
     std::cout << "I hear you just had a birthday and you are "
         << age << " years old." << std::endl;
+    if (age < 12)
+        std::cout << "Next year you will be " << age + 1 << '.' << std::endl;
+    else if (age == 17)
+        std::cout << "Next year you will be able to vote." << std::endl;
+    else if (age > 70)
+        std::cout << "I hope you are enjoying retirement." << std::endl;
 }
