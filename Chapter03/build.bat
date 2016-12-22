@@ -88,4 +88,3 @@ if exist %~n1.obj del %~n1.obj
 if exist %~n1.exe.manifest del %~n1.exe.manifest
 
 :END
-     

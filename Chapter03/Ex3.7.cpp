@@ -60,5 +60,4 @@ void another_variant()
         std::cout << val << " ";
     }
     std::cout << std::endl;
-
 }
