@@ -5,9 +5,11 @@
 
 int main()
 {
-    while (std::cin)
+    std::cout << "Enter the digit in writing ('zero' or 'two'):" << std::endl;
+
+    std::string repr;
+    while (std::cin >> repr)
     {
-        std::string repr;
         if (repr == "zero") std::cout << 0;
         else if (repr == "one") std::cout << 1;
         else if (repr == "two") std::cout << 2;
@@ -19,6 +21,7 @@ int main()
         else if (repr == "eight") std::cout << 8;
         else if (repr == "nine") std::cout << 9;
         else std::cout << "not a number I know";
+        std::cout << std::endl;
     }
 }
 
@@ -31,8 +34,7 @@ void another_variant()
         std::cin >> repr;
         int i = 0;
         while (i < digits.size() && digits[i] != repr) ++i;
-        if (i > 9) std::cout << "not a number I know" << std::endl;
+        if (i >= digits.size()) std::cout << "not a number I know" << std::endl;
         else std::cout << i << std::endl;
     }
-
 }
