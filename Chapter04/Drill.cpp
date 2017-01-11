@@ -10,9 +10,12 @@ int main()
 			std::cout << "the smaller value is: " << v1 << std::endl;
 			std::cout << "the  larger value is: " << v2 << std::endl;
 		}
-		else {
+		else if (v2 < v1) {
 			std::cout << "the smaller value is: " << v2 << std::endl;
 			std::cout << "the  larger value is: " << v1 << std::endl;
+		}
+		else {
+			std::cout << "the numbers are equal" << std::endl;
 		}
         std::cout << ">";
     }
