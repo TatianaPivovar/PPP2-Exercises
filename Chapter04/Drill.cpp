@@ -6,7 +6,14 @@ int main()
     std::cout << "Please enter two integer values (enter '|' to exit):" << std::endl;
     std::cout << ">";
     while ((std::cin >> v1) && (std::cin >> v2)) {
-        std::cout << v1 << " " << v2 << std::endl;
+		if (v1 < v2) {
+			std::cout << "the smaller value is: " << v1 << std::endl;
+			std::cout << "the  larger value is: " << v2 << std::endl;
+		}
+		else {
+			std::cout << "the smaller value is: " << v2 << std::endl;
+			std::cout << "the  larger value is: " << v1 << std::endl;
+		}
         std::cout << ">";
     }
     return 0;
