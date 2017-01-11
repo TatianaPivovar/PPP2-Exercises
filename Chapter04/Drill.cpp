@@ -1,30 +1,24 @@
 #include <iostream>
-
-void print_ordered(double v1, double v2)
-{
-	std::cout << "the smaller value is: " << v1 << std::endl;
-	std::cout << "the  larger value is: " << v2 << std::endl;
-	if (v2 - v1 < 1.0/100) {
-		std::cout << "the numbers are almost equal" << std::endl;
-	}
-}
+#include <limits>
 
 int main()
 {
-    double v1 = 0, v2 = 0;
     std::cout << "Please enter two integer values (enter '|' to exit):" << std::endl;
     std::cout << ">";
-    while ((std::cin >> v1) && (std::cin >> v2)) {
-		if (v1 < v2) {
-			print_ordered(v1, v2);
+	double input = 0;
+	double smallest = std::numeric_limits<double>::max();
+	double largest = std::numeric_limits<double>::min();
+    while ((std::cin >> input)) {
+		std::cout << "Entered: " << input;
+		if (input < smallest) {
+			std::cout << " the smallest so far";
+			smallest = input;
 		}
-		else if (v2 < v1) {
-			print_ordered(v2, v1);
+		if (input > largest) {
+			std::cout << " the largest so far";
+			largest = input;
 		}
-		else {
-			std::cout << "the numbers are equal" << std::endl;
-		}
-        std::cout << ">";
+        std::cout << std::endl << ">";
     }
     return 0;
 } 
