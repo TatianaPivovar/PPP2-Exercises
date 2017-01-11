@@ -4,6 +4,9 @@ void print_ordered(double v1, double v2)
 {
 	std::cout << "the smaller value is: " << v1 << std::endl;
 	std::cout << "the  larger value is: " << v2 << std::endl;
+	if (v2 - v1 < 1.0/100) {
+		std::cout << "the numbers are almost equal" << std::endl;
+	}
 }
 
 int main()
