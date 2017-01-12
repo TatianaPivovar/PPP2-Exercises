@@ -25,7 +25,12 @@ int main()
 		else if (unit == "ft") {
 			std::cout << " = " << 12 * value << "in";
 		}
-		else {}
+		else {
+			std::cout << std::endl;
+			std::cout << "Sorry, I don't know a unit called '" << unit << '\'';
+			std::cout << std::endl << ">";
+			continue;
+		}
 
 		if (value < smallest) {
 			std::cout << " the smallest so far";
