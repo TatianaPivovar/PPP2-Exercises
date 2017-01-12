@@ -35,6 +35,7 @@ int main()
 		values.push_back(value);
 		std::cout << std::endl << ">";
 	}
+	std::sort(values.begin(), values.end());
 	for(auto &v : values) {
 		std::cout << v << std::endl;
 	}
