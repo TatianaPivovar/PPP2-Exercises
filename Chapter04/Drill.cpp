@@ -1,18 +1,17 @@
+#include <algorithm>
 #include <iostream>
-#include <limits>
+#include <numeric>
 #include <string>
+#include <vector>
 
 int main()
 {
-    std::cout << "Please enter a length followed by a unit (cm, m, in, ft or  '|' to exit):" << std::endl;
-    std::cout << ">";
+	std::cout << "Please enter a length followed by a unit (cm, m, in, ft or  '|' to exit):" << std::endl;
+	std::cout << ">";
+	std::vector<double> values;
 	double value = 0;
-	double sum = 0;
-	int count = 0;
-	double smallest = std::numeric_limits<double>::max();
-	double largest = std::numeric_limits<double>::min();
 	std::string unit;
-    while ((std::cin >> value) && (std::cin >> unit)) {
+	while ((std::cin >> value) && (std::cin >> unit)) {
 		std::cout << "Entered: " << value << unit;
 
 		if (unit == "cm") {
@@ -33,22 +32,12 @@ int main()
 			continue;
 		}
 		std::cout << " = " << value << "m";
-		sum += value;
-		++count;
-
-		if (value < smallest) {
-			std::cout << " the smallest so far";
-			smallest = value;
-		}
-		if (value > largest) {
-			std::cout << " the largest so far";
-			largest = value;
-		}
-        std::cout << std::endl << ">";
-    }
-	std::cout << "The smallest: " << smallest << 'm' << std::endl;
-	std::cout << "The largest:  " << largest << 'm' << std::endl;
-	std::cout << "The number of values: " << count << std::endl;
-	std::cout << "The sum: " << sum << 'm' << std::endl;
-    return 0;
-} 
+		values.push_back(value);
+		std::cout << std::endl << ">";
+	}
+	std::cout << "The smallest: " << *std::min_element(values.begin(), values.end()) << 'm' << std::endl;
+	std::cout << "The largest:  " << *std::max_element(values.begin(), values.end()) << 'm' << std::endl;
+	std::cout << "The number of values: " << values.size() << std::endl;
+	std::cout << "The sum: " << std::accumulate(values.begin(), values.end(), 0.0) << 'm' << std::endl;
+	return 0;
+}
