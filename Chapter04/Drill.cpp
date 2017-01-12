@@ -35,6 +35,9 @@ int main()
 		values.push_back(value);
 		std::cout << std::endl << ">";
 	}
+	for(auto &v : values) {
+		std::cout << v << std::endl;
+	}
 	std::cout << "The smallest: " << *std::min_element(values.begin(), values.end()) << 'm' << std::endl;
 	std::cout << "The largest:  " << *std::max_element(values.begin(), values.end()) << 'm' << std::endl;
 	std::cout << "The number of values: " << values.size() << std::endl;
