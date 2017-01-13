@@ -17,5 +17,9 @@ int main()
     // compute median temperature:
     std::sort(temps.begin(),temps.end()); // sort temps
     // "from the beginning to the end."
-    std::cout << "Median temperature: " << temps[temps.size()/2] << std::endl;
+	int middle = temps.size() / 2;
+	double median = temps.size() & 1
+					? temps[middle]
+					: (temps[middle - 1] + temps[middle]) / 2;
+    std::cout << "Median temperature: " << median << std::endl;
 }
