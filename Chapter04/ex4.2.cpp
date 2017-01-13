@@ -1,19 +1,21 @@
-#include "std_lib_facilities.h"
+#include <algorithm>
+#include <iostream>
+#include <vector>
 // compute mean and median temperatures
 int main()
 {
-    vector<double> temps;        // temperatures
+    std::vector<double> temps;        // temperatures
     double temp;
-    while (cin>>temp)            // read 
+    while (std::cin >> temp)            // read 
         temps.push_back(temp);   // put into vector
 
     // compute mean temperature:
     double sum = 0;
     for (int i = 0; i< temps.size(); ++i) sum += temps[i];
-    cout << "Average temperature: " << sum/temps.size() << endl;
+    std::cout << "Average temperature: " << sum/temps.size() << std::endl;
 
     // compute median temperature:
-    sort(temps.begin(),temps.end()); // sort temps
+    std::sort(temps.begin(),temps.end()); // sort temps
     // "from the beginning to the end."
-    cout << "Median temperature: " << temps[temps.size()/2] << endl;
+    std::cout << "Median temperature: " << temps[temps.size()/2] << std::endl;
 }
