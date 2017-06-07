@@ -64,8 +64,8 @@ int get_number()
     cin.clear();    // clear string after failed attempt to read an integer
     string s;
     cin >> s;
-    //if ("quit" == s || "exit" == s || "q" == s)
-    //    return -1;
+    if ("quit" == s || "exit" == s || "q" == s)
+        return not_a_symbol;
     for (int i = 0; i < numbers.size(); ++i)    // see if the string is in numbers
         if (numbers[i] == s) val = i;
     if (val == not_a_symbol) throw runtime_error("unexpected number string: " + s);
@@ -86,6 +86,8 @@ try
         cin >> op; // get the operator
         
         int val2 = get_number();
+        
+        if (val1 == numbers.size() || val2 == numbers.size()) return 0;
 
         string oper;    // text appropriate for an operator
         double result;
